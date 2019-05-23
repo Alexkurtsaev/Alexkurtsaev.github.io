@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+    	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+		<title>Restaraunt</title>
+		<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+	</head>
+	<body>
+	
+	<div class="mainBody">
+		
+		<div class="container"></div>
+			<div class="centered">
+					<h1>Monk's Cafe</h1>
+					<h3>"The Coffee Shop"</h3>
+			</div>
+			<img class="rImg" src="http://circuits-assets.generalassemb.ly/prod/asset/5475/toms-restaurant.jpg">
+		
+
+
+		<h1>Reservations</h1>
+		<hr>
+		<h3>Make your reservation</h3>
+		<div class="box">
+			<form class="reservationForm" action="">
+				<input id="resName" type="text" name="userName" placeholder="Name Surname"><br>
+				<input id="resDate" type="text" name="day" placeholder="dd/mm/yyyy hh:mm"><br>
+				<button id="submitReservation" type="submit">reserve</button>
+			</form>
+		</div>
+
+		<hr>
+
+		<h3>Existing reservations</h3>
+		<div class="box">
+			<table class="resTable">
+				<tr>
+					<th>Name</th>
+					<th>When</th>
+				</tr>
+			</table>
+		</div>
+
+		<script id="reservationTable" type="text/x-handlebars-template">
+					<tr data-id="{{reservationId}}">
+						<td>{{name}}</td>
+						<td>{{date}}</td>
+					</tr>
+		</script>
+
+		<hr>
+
+		<h1>Come Dine with Us</h1>
+		<div id="map"></div>
+
+		<hr>
+
+		<div class="container">
+			<div class="centered">
+		<h1>Customer Reviews</h1>
+			</div>
+		<img class="lImg" src="http://circuits-assets.generalassemb.ly/prod/asset/5474/jerry.jpg">
+		</div>
+		<div class="box">
+		<form class="reviewForm" action="">
+			<input id="revName" type="text" name="userName" placeholder="Name Surname"><br>
+			<input id="revItem" type="text" name="item" placeholder="Item you have tried"><br>
+			<input id="revReview" type="text" name="review" placeholder="It was..."><br>
+			<button id="submitReview" type="submit">submit review</button>
+		</form>
+		</div>
+		<ul class="reviewList"></ul>
+
+			<script id="reviewDisplay" type="text/x-handlebars-template">
+				<li data-id="{{reviewId}}">
+					<p>customer: {{name}}</p>
+					<p>tried: {{item}}</p>
+					<p>it was: {{review}}</p>
+				</li>
+			</script>
+		
+
+	<script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-database.js"></script>
+	<script src="js/jquery-3.0.0.js"></script>
+	<script src="js/handlebars-v4.0.5.js"></script>
+	<script src="js/main.js"></script>
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB553rRRSvaoa2h6NefG5511xjO2BppGxA&callback=initMap"
+  type="text/javascript"></script>
+	</div>
+	</body>
+</html>
